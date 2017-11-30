@@ -9,6 +9,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Content-Type: application/json" \
   --data '{
     "events": {
+      "id": "'"${EVENT_ID}"'",
       "new_name": "'"${NEW_NAME}"'",
       "new_date": "'"${NEW_DATE}"'",
       "new_description": "'"${NEW_DESCRIPTION}"'"
