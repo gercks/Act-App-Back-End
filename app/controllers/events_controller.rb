@@ -1,5 +1,5 @@
 
-class EventsController < ApplicationController
+class EventsController < OpenReadController
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
@@ -16,7 +16,8 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    # binding.pry
+    @event = current_user.events.build(event_params)
 
     if @event.save
       render json: @event, status: :created, location: @event
