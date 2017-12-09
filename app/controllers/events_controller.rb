@@ -1,6 +1,6 @@
 
 class EventsController < OpenReadController
-  before_action :set_event, only: [:show, :update, :destroy, :myevents]
+  before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
   def index
@@ -10,7 +10,7 @@ class EventsController < OpenReadController
   end
 
   def myevents
-    @events = Event.all
+    @events = current_user.events.all
 
     render json: @events
   end
@@ -55,6 +55,6 @@ class EventsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :date, :description, :user)
+      params.require(:event).permit(:name, :date, :description, :user_id)
     end
 end
