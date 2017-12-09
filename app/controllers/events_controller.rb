@@ -9,6 +9,13 @@ class EventsController < OpenReadController
     render json: @events
   end
 
+  def myevents
+    @events = current_user.events.all
+
+    render json: @events
+  end
+
+
   # GET /events/1
   def show
     render json: @event
@@ -43,11 +50,11 @@ class EventsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :date, :description)
+      params.require(:event).permit(:name, :date, :description, :user_id)
     end
 end

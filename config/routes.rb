@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources :events
   resources :examples, except: %i[new edit]
+  get '/my-events' => 'events#myevents'
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
   delete '/sign-out/:id' => 'users#signout'
