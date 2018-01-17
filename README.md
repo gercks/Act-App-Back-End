@@ -2,7 +2,7 @@
 
 This repository contains the back-end code for an application designed to be used as a sort of social media site for people involved with activism.
 
-The back end repository can be found here: https://github.com/gercks/Act-App-Front-End
+The front end repository can be found here: https://github.com/gercks/Act-App-Front-End
 
 The deployed database can be found here: https://evening-oasis-55074.herokuapp.com/events
 
