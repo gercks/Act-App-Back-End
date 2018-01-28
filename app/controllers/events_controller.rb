@@ -1,6 +1,6 @@
 
 class EventsController < OpenReadController
-  before_action :set_event, only: [:show, :update, :destroy]
+  before_action :set_event, only: [:show, :update]
 
   # GET /events
   def index
